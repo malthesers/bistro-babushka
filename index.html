@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro Babushka</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/2c784390b6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header_desk">
+            <a href="index.html">
+                <img src="img/babushka_face.svg" alt="face of logo resembling a matryoshka doll">
+            </a>
+            <div>
+                <i id="burgerMenuOn" class="fas fa-bars"></i>
+                <i id="burgerMenuOff" class="fas fa-times"></i>
+                <nav id="navRow">
+                    <ul>
+                        <li><a href="index.html#section_menu">Menu</a></li>
+                        <li><a href="about.html">Om</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="burgerItems">
+            <hr style="margin: 0">
+            <nav>
+                <ul>
+                    <li><a href="index.html#section_menu">Menu</a></li>
+                    <hr>
+                    <li><a href="about.html">Om</a></li>
+                    <hr>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <hr style="margin-bottom: 0">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="landing">
+            <div id="landing_text">
+                <img src="img/babushka.svg" alt="logo resembling a matryoshka doll">
+                <a href="#section_menu">SE MENU</a>
+                <!--<span>Photo by <a href="https://unsplash.com/@yogesh_7?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Yogesh Pedamkar</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>-->
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <section id="section_menu">
+            <div id="starter" class="category">
+                <div class="nav_menu">
+                    <div class="nav_menu_flex">
+                        <a href="#starter">
+                            <h2 class="selected">Forretter</h2>
+                        </a>
+                        <a class="hidden" href="#main">
+                            <h2>Hovedretter</h2>
+                        </a>
+                        <a class="hidden" href="#desserts">
+                            <h2>Desserter</h2>
+                        </a>
+                        <a class="hidden" href="#side">
+                            <h2>Sideorders</h2>
+                        </a>
+                        <a class="hidden" href="#drinks">
+                            <h2>Drikkevarer</h2>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+                <div id="cat_forretter" class="menu_grid"></div>
+            </div>
+            <div id="main" class="category">
+                <div class="nav_menu">
+                    <div class="nav_menu_flex">
+                        <a class="hidden" href="#starter">
+                            <h2>Forretter</h2>
+                        </a>
+                        <a href="#main">
+                            <h2 class="selected">Hovedretter</h2>
+                        </a>
+                        <a class="hidden" href="#desserts">
+                            <h2>Desserter</h2>
+                        </a>
+                        <a class="hidden" href="#side">
+                            <h2>Sideorders</h2>
+                        </a>
+                        <a class="hidden" href="#drinks">
+                            <h2>Drikkevarer</h2>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+                <div id="cat_hovedretter" class="menu_grid"></div>
+            </div>
+            <div id="desserts" class="category">
+                <div class="nav_menu">
+                    <div class="nav_menu_flex">
+                        <a class="hidden" href="#starter">
+                            <h2>Forretter</h2>
+                        </a>
+                        <a class="hidden" href="#main">
+                            <h2>Hovedretter</h2>
+                        </a>
+                        <a href="#desserts">
+                            <h2 class="selected">Desserter</h2>
+                        </a>
+                        <a class="hidden" href="#side">
+                            <h2>Sideorders</h2>
+                        </a>
+                        <a class="hidden" href="#drinks">
+                            <h2>Drikkevarer</h2>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+                <div id="cat_desserter" class="menu_grid"></div>
+            </div>
+            <div id="side" class="category">
+                <div class="nav_menu">
+                    <div class="nav_menu_flex">
+                        <a class="hidden" href="#starter">
+                            <h2>Forretter</h2>
+                        </a>
+                        <a class="hidden" href="#main">
+                            <h2>Hovedretter</h2>
+                        </a>
+                        <a class="hidden" href="#desserts">
+                            <h2>Desserter</h2>
+                        </a>
+                        <a href="#side">
+                            <h2 class="selected">Sideorders</h2>
+                        </a>
+                        <a class="hidden" href="#drinks">
+                            <h2>Drikkevarer</h2>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+                <div id="cat_sideorders" class="menu_grid"></div>
+            </div>
+            <div id="drinks" class="category">
+                <div class="nav_menu">
+                    <div class="nav_menu_flex">
+                        <a class="hidden" href="#starter">
+                            <h2>Forretter</h2>
+                        </a>
+                        <a class="hidden" href="#main">
+                            <h2>Hovedretter</h2>
+                        </a>
+                        <a class="hidden" href="#desserts">
+                            <h2>Desserter</h2>
+                        </a>
+                        <a class="hidden" href="#side">
+                            <h2>Sideorders</h2>
+                        </a>
+                        <a href="#drinks">
+                            <h2 class="selected">Drikkevarer</h2>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+                <div id="cat_drikkevarer" class="menu_grid"></div>
+            </div>
+        </section>
+        <div id="newsletter">
+            <form>
+                <label for="email">Tilmeld dig vores nyhedsbrev</label>
+                <div>
+                    <input id="email" name="email" type="email">
+                    <button id="newsletter_button">Tilmeld</button>
+                </div>
+            </form>
+            <!--<span>Photo by <a href="https://unsplash.com/@mumenthalers?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Simon Mumenthaler</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>-->
+        </div>
+        <template>
+            <article>
+                <div class="dish_top">
+                    <img class="image">
+                    <div class="text_top">
+                        <h3 class="name"></h3>
+                        <h3 class="price"></h3>
+                    </div>
+                    <h4 class="description"></h4>
+                </div>
+                <div class="dish_bottom">
+                    <button class="button_details">Læs mere</button>
+                </div>
+            </article>
+        </template>
+    </main>
+    <footer>
+        <div id="footer">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+        <p>Generiskgade 12, 2300 København S</p>
+        <p>© Copyright 2021 BABUSHKA. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

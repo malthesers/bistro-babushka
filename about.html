@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/2c784390b6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header_desk">
+            <a href="index.html">
+                <img src="img/babushka_face.svg" alt="face of logo resembling a matryoshka doll">
+            </a>
+            <div>
+                <i id="burgerMenuOn" class="fas fa-bars"></i>
+                <i id="burgerMenuOff" class="fas fa-times"></i>
+                <nav id="navRow">
+                    <ul>
+                        <li><a href="index.html#section_menu">Menu</a></li>
+                        <li><a href="about.html">Om</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="burgerItems">
+            <hr style="margin: 0">
+            <nav>
+                <ul>
+                    <li><a href="index.html#section_menu">Menu</a></li>
+                    <hr>
+                    <li><a href="about.html">Om</a></li>
+                    <hr>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <hr style="margin-bottom: 0">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="about_landing">
+            <!--<span>Photo by <a href="https://unsplash.com/@grittzheng?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Gritt Zheng</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>-->
+        </div>
+        <section id="section_about">
+            <article>
+                <h2>En østeuropæisk inspireret bistro, Babushka leverer dig den fulde slaviske oplevelse.</h2>
+            </article>
+            <article>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis eget velit aliquet sagittis id consectetur. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Quis vel eros donec ac odio tempor. Tortor vitae purus faucibus ornare suspendisse sed nisi. Mattis rhoncus urna neque viverra justo nec. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim sodales ut eu sem.</p>
+                <p>Augue ut lectus arcu bibendum at varius vel. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget. Nisl tincidunt eget nullam non nisi est sit amet. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Aliquet enim tortor at auctor urna. Nunc sed augue lacus viverra vitae. Accumsan in nisl nisi scelerisque. Vel turpis nunc eget lorem. Auctor urna nunc id cursus metus. Mattis vulputate enim nulla aliquet porttitor.</p>
+                <p>Imperdiet sed euismod nisi porta. Nisi lacus sed viverra tellus in hac habitasse. At quis risus sed vulputate odio ut enim blandit volutpat. Sodales ut etiam sit amet nisl. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Sapien et ligula ullamcorper malesuada. Pellentesque id nibh tortor id aliquet lectus proin nibh. In iaculis nunc sed augue lacus viverra vitae congue eu.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div id="footer">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+        <p>Generiskgade 12, 2300 København S</p>
+        <p>© Copyright 2021 BABUSHKA. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOMContentLoaded");
+            loadJSON();
+        })
+
+        window.onscroll = function() {
+            console.log("scroll");
+            if (window.scrollY > 50) {
+                document.querySelector("header").classList.add("active");
+            } else {
+                document.querySelector("header").classList.remove("active");
+            }
+        }
+
+        const burgerOn = document.querySelector("#burgerMenuOn");
+        const burgerOff = document.querySelector("#burgerMenuOff");
+        const burgerItems = document.querySelector("#burgerItems");
+        const header = document.querySelector("header");
+
+        burgerOn.addEventListener("click", () => {
+            burgerOn.style.display = "none";
+            burgerOff.style.display = "inline-block";
+
+            header.classList.add("active");
+            burgerItems.style.display = "block";
+        })
+
+        burgerOff.addEventListener("click", () => {
+            burgerOn.style.display = "inline-block";
+            burgerOff.style.display = "none";
+
+            burgerItems.style.display = "none";
+
+            if (window.scrollY < 51) {
+                header.classList.remove("active");
+            }
+        })
+
+    </script>
+</body>
+
+</html>

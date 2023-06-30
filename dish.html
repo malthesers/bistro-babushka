@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/2c784390b6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="active">
+        <div id="header_desk">
+            <a href="index.html">
+                <img src="img/babushka_face.svg" alt="face of logo resembling a matryoshka doll">
+            </a>
+            <div>
+                <i id="burgerMenuOn" class="fas fa-bars"></i>
+                <i id="burgerMenuOff" class="fas fa-times"></i>
+                <nav id="navRow">
+                    <ul>
+                        <li><a href="index.html#section_menu">Menu</a></li>
+                        <li><a href="about.html">Om</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="burgerItems">
+            <hr style="margin: 0">
+            <nav>
+                <ul>
+                    <li><a href="index.html#section_menu">Menu</a></li>
+                    <hr>
+                    <li><a href="about.html">Om</a></li>
+                    <hr>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <hr style="margin-bottom: 0">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="section_dish">
+            <article>
+                <div class="col">
+                    <img id="dish_image">
+                </div>
+                <div class="col_text">
+                    <div class="top">
+                        <h2 id="dish_name"></h2>
+                        <h3 id="dish_category"></h3>
+                        <h3 id="dish_description"></h3>
+                        <h3 id="dish_origin">Oprindelse: </h3>
+                        <h3 id="dish_price">Pris: </h3>
+                    </div>
+                    <button id="button_book">Reservér bord</button>
+                </div>
+            </article>
+        </section>
+        <section id="section_also">
+            <h2>Prøv også</h2>
+            <div id="grid_also">
+            </div>
+        </section>
+        <template>
+            <article>
+                <div class="dish_top">
+                    <img class="image">
+                    <div class="text_top">
+                        <h3 class="name"></h3>
+                        <h3 class="price"></h3>
+                    </div>
+                    <h4 class="description"></h4>
+                </div>
+                <div class="dish_bottom">
+                    <button class="button_details">Læs mere</button>
+                </div>
+            </article>
+        </template>
+    </main>
+    <footer>
+        <div id="footer">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+        <p>Generiskgade 12, 2300 København S</p>
+        <p>© Copyright 2021 BABUSHKA. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const burgerOn = document.querySelector("#burgerMenuOn");
+        const burgerOff = document.querySelector("#burgerMenuOff");
+        const burgerItems = document.querySelector("#burgerItems");
+        const header = document.querySelector("header");
+
+        burgerOn.addEventListener("click", () => {
+            burgerOn.style.display = "none";
+            burgerOff.style.display = "inline-block";
+
+            burgerItems.style.display = "block";
+        })
+
+        burgerOff.addEventListener("click", () => {
+            burgerOn.style.display = "inline-block";
+            burgerOff.style.display = "none";
+
+            burgerItems.style.display = "none";
+        })
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        let dish;
+
+        const url = "";
+
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON);
+
+        loadOtherJSON();
+
+        async function loadJSON() {
+            const JSONData = await fetch()
+
+            dish = await JSONData.json();
+
+            console.log("dishes", dish);
+            showDish(dish);
+        }
+
+        function showDish() {
+            console.log("showingDish");
+            const dishDesc = document.querySelector("#dish_description");
+            document.querySelector("#dish_image").src = media + dish.billede[0];
+            document.querySelector("#dish_image").alt = dish.kortbeskrivelse;
+            document.querySelector("#dish_name").textContent = dish.navn;
+            document.querySelector("#dish_category").textContent = dish.kategori;
+            document.querySelector("#dish_origin").textContent += dish.oprindelsesregion;
+            document.querySelector("#dish_price").innerHTML = `Pris: ${dish.pris},-`;
+
+            if (dish.langbeskrivelse == "") {
+                dishDesc.textContent = dish.kortbeskrivelse;
+            } else {
+                dishDesc.textContent = dish.langbeskrivelse;
+            }
+        }
+
+        async function loadOtherJSON() {
+            const otherJSON = await fetch(url, {
+                headers: myHeaders
+            });
+            otherDishes = await otherJSON.json();
+
+            console.log(otherDishes);
+            showOther();
+        }
+
+        function showOther() {
+            console.log("showingOther");
+            const other1 = otherDishes[Math.floor(Math.random() * otherDishes.length)];
+            const other2 = otherDishes[Math.floor(Math.random() * otherDishes.length)];
+            const other3 = otherDishes[Math.floor(Math.random() * otherDishes.length)];
+            const randomDishes = [other1, other2, other3];
+            console.log(randomDishes);
+
+            randomDishes.forEach(rngDish => {
+                const template = document.querySelector("template");
+                let container = document.querySelector("#grid_also");
+                let clone = template.cloneNode(true).content;
+                clone.querySelector("img").src = media + rngDish.billede[0];
+                clone.querySelector("img").alt = rngDish.navn;
+                clone.querySelector("article").addEventListener("click", () => showDetails(rngDish));
+                clone.querySelector(".name").textContent = rngDish.navn;
+                clone.querySelector(".price").textContent = `${rngDish.pris},-`;
+                clone.querySelector(".description").textContent = rngDish.kortbeskrivelse;
+                container.appendChild(clone);
+            })
+        }
+
+        function showDetails(rngDish) {
+            console.log("showingDetails");
+            location.href = `dish.html?id=${rngDish._id}`;
+        }
+
+    </script>
+</body>
+
+</html>

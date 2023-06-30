@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/2c784390b6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header_desk">
+            <a href="index.html">
+                <img src="img/babushka_face.svg" alt="face of logo resembling a matryoshka doll">
+            </a>
+            <div>
+                <i id="burgerMenuOn" class="fas fa-bars"></i>
+                <i id="burgerMenuOff" class="fas fa-times"></i>
+                <nav id="navRow">
+                    <ul>
+                        <li><a href="index.html#section_menu">Menu</a></li>
+                        <li><a href="about.html">Om</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="burgerItems">
+            <hr style="margin: 0">
+            <nav>
+                <ul>
+                    <li><a href="index.html#section_menu">Menu</a></li>
+                    <hr>
+                    <li><a href="about.html">Om</a></li>
+                    <hr>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <hr style="margin-bottom: 0">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="contact_landing">
+            <!--<span>Photo by <a href="https://unsplash.com/@andrazlazic?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andraz Lazic</a> on <a href="https://unsplash.com/s/photos/plitvice?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>-->
+        </div>
+        <section id="section_contact">
+            <div id="contact_form" class="col_contact">
+                <form>
+                    <div id="mail_top">
+                        <div>
+                            <label for="name"></label>
+                            <input id="name" name="name" type="text" placeholder="Name">
+                        </div>
+                        <div>
+                            <label for="email"></label>
+                            <input id="email" name="email" type="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject"></label>
+                        <input id="subject" name="subject" type="text" placeholder="Emne">
+                    </div>
+                    <div>
+                        <label for="message"></label>
+                        <textarea id="message" name="message" type="text" placeholder="Skriv venligst din besked her"></textarea>
+                    </div>
+                    <div>
+                        <button class="pointer">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div id="contact_info" class="col_contact">
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <p>+45 12 34 56 78</p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Generiskgade 12, 2300 KBH S</p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <p>babushka@bistromail.dk</p>
+                </div>
+                <div>
+                    <i class="fab fa-facebook-square"></i>
+                    <p>https://fb.me/bistobabushka</p>
+                </div>
+                <div>
+                    <i class="fab fa-instagram"></i>
+                    <p>bistro_babushka</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="footer">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+        <p>Generiskgade 12, 2300 København S</p>
+        <p>© Copyright 2021 BABUSHKA. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOMContentLoaded");
+            loadJSON();
+        })
+
+        window.onscroll = function() {
+            console.log("scroll");
+            if (window.scrollY > 50) {
+                document.querySelector("header").classList.add("active");
+            } else {
+                document.querySelector("header").classList.remove("active");
+            }
+        }
+
+        const burgerOn = document.querySelector("#burgerMenuOn");
+        const burgerOff = document.querySelector("#burgerMenuOff");
+        const burgerItems = document.querySelector("#burgerItems");
+        const header = document.querySelector("header");
+
+        burgerOn.addEventListener("click", () => {
+            burgerOn.style.display = "none";
+            burgerOff.style.display = "inline-block";
+
+            header.classList.add("active");
+            burgerItems.style.display = "block";
+        })
+
+        burgerOff.addEventListener("click", () => {
+            burgerOn.style.display = "inline-block";
+            burgerOff.style.display = "none";
+
+            burgerItems.style.display = "none";
+
+            if (window.scrollY < 51) {
+                header.classList.remove("active");
+            }
+        })
+
+    </script>
+</body>
+
+</html>
