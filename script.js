@@ -54,7 +54,7 @@ function showCuisine() {
     let filter = `#cat_${dish.kategori}`;
     let container = document.querySelector(filter);
     let clone = template.cloneNode(true).content;
-    clone.querySelector("img").src = media + dish.billede[0];
+    // clone.querySelector("img").src = media + dish.billede[0];
     clone.querySelector("img").alt = dish.navn;
     clone.querySelector("article").addEventListener("click", () => showDetails(dish));
     clone.querySelector(".name").textContent = dish.navn;

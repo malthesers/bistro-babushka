@@ -141,7 +141,7 @@
 
             console.log("showingDish");
             const dishDesc = document.querySelector("#dish_description");
-            document.querySelector("#dish_image").src = media + dish.billede[0];
+            // document.querySelector("#dish_image").src = media + dish.billede[0];
             document.querySelector("#dish_image").alt = dish.kortbeskrivelse;
             document.querySelector("#dish_name").textContent = dish.navn;
             document.querySelector("#dish_category").textContent = dish.kategori;
@@ -175,7 +175,7 @@
                 const template = document.querySelector("template");
                 let container = document.querySelector("#grid_also");
                 let clone = template.cloneNode(true).content;
-                clone.querySelector("img").src = media + rngDish.billede[0];
+                // clone.querySelector("img").src = media + rngDish.billede[0];
                 clone.querySelector("img").alt = rngDish.navn;
                 clone.querySelector("article").addEventListener("click", () => showDetails(rngDish));
                 clone.querySelector(".name").textContent = rngDish.navn;
