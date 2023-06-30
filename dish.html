@@ -118,9 +118,9 @@
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
 
-        let dish;
-
-        const url = "";
+        const url = "./menu.json";
+        let dishes;
+        let otherDishes;
 
         console.log("ID", id);
         document.addEventListener("DOMContentLoaded", loadJSON);
@@ -128,15 +128,17 @@
         loadOtherJSON();
 
         async function loadJSON() {
-            const JSONData = await fetch()
+            const JSONData = await fetch(url)
 
-            dish = await JSONData.json();
+            dishes = await JSONData.json();
 
-            console.log("dishes", dish);
-            showDish(dish);
+            console.log("dishes", dishes);
+            showDish(dishes);
         }
 
         function showDish() {
+            const dish = dishes[0]
+
             console.log("showingDish");
             const dishDesc = document.querySelector("#dish_description");
             document.querySelector("#dish_image").src = media + dish.billede[0];
@@ -154,9 +156,7 @@
         }
 
         async function loadOtherJSON() {
-            const otherJSON = await fetch(url, {
-                headers: myHeaders
-            });
+            const otherJSON = await fetch(url);
             otherDishes = await otherJSON.json();
 
             console.log(otherDishes);

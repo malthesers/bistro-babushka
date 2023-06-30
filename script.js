@@ -36,10 +36,11 @@ burgerOff.addEventListener("click", () => {
   }
 });
 
+const url = "./menu.json";
 let cuisine;
 
 async function loadJSON() {
-  const JSONData = await fetch(url, options);
+  const JSONData = await fetch(url);
   cuisine = await JSONData.json();
   showCuisine();
 }
