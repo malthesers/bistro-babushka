@@ -139,6 +139,8 @@
         function showDish() {
             const dish = dishes.find(dish => dish._id == id)
 
+            document.title = dish.navn
+
             console.log("showingDish");
             const dishDesc = document.querySelector("#dish_description");
             // document.querySelector("#dish_image").src = media + dish.billede[0];
